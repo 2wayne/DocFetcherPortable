@@ -5,7 +5,7 @@
 	<key>CFBundleExecutable</key>
 		<string>DocFetcher</string>
 	<key>CFBundleGetInfoString</key>
-		<string>DocFetcher 1.1.16 for Mac OS X</string>
+		<string>DocFetcher 1.1.17 for Mac OS X</string>
 	<key>CFBundleIconFile</key>
 		<string>DocFetcher.icns</string>
 	<key>CFBundleIdentifier</key>
@@ -17,11 +17,11 @@
 	<key>CFBundlePackageType</key>
 		<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
-		<string>1.1.16</string>
+		<string>1.1.17</string>
 	<key>CFBundleSignature</key>
 		<string>?????</string>
 	<key>CFBundleVersion</key>
-		<string>20150906-2301</string>
+		<string>20160211-2357</string>
 	<key>NSPrincipalClass</key>
 		<string>NSApplication</string>
 </dict>
