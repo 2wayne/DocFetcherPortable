@@ -9,7 +9,7 @@
 	<body>
 		<div id="main">
 			<div style="float: right; color: gray;">
-				DocFetcher 1.1.18<br/>
+				DocFetcher 1.1.19<br/>
 			</div>
 			<h1>はじめに</h1><p>DocFetcher はオープンソースのデスクトップ検索アプリケーションです。コンピュータ内のファイルの文書を（Googleの様に）検索することが出来ます。</p><p><strong>インデックスによる検索</strong>: DocFetcher はあらかじめ検索したい場所のインデックスを作成する必要があります。それは膨大な文書の中から直接検索するのは非常に遅いため現実的では無いためです。インデックスは書籍の後ろにある索引のように、DocFetcherはキーワードで素早くファイルを見つけることが出来ます。インデックスを作成するには、インデックスを作成するファイルの数とサイズに応じて、少し時間がかかる場合があります。 しかしながらこれはフォルダごとに1回のみ行えば良く、その後は何回でもインデックスから検索することが出来ます。</p><p><strong>インデックスの作成</strong>: インデックスを作成するには、左側にある<code>検索範囲</code>エリアの上で右クリックし、 <code>インデックスを作成→フォルダ</code>を選択します。今すぐ選択したフォルダをインデックス化してみます。 最初はあまり多くない、だいたい50程度のファイルで試すべきです。フォルダを選択した後、設定ウィンドウがポップアップ表示されます。通常はデフォルトの設定のまま、実行ボタンをクリックし、DocFetcherが文書をインデックス化し終わるまでまってください。 (インデックスを作成する別の方法は、 <code>検索範囲</code> エリアに直接ディレクトリを貼り付けることです)</p><p><strong>検索</strong>: 結果欄（と列ヘッダーがある表）の上にある、検索するためのテキストボックスに1つ以上の単語を入力し、 <code>Enter</code> キーを押下ます。 検索した結果が結果欄に検出率順にソートされて表示されるでしょう。</p><p><em>もしあなたがDocFetcher内からマニュアルを読んでいるなら、次の指示を行うとマニュアルが非表示になります。再度表示するには、右上にある<code>&#39;?&#39;</code> ボタンをクリックして下さい。またはこの欄の上にある<code>外部ブラウザで開く</code> ボタンをクリックして既定のブラウザでマニュアルを開くことが出来ます。</em></p><p><strong>結果欄とプレビュー欄</strong>: 結果欄の下（または現在のGUIレイアウトに応じてその右側）に, プレビュー欄があります。結果欄でファイルを選択すると、プレビュー欄には、ファイルの内容のテキストのみのプレビューが表示されます。 特筆すべき機能:</p>
 <ul>
@@ -20,7 +20,10 @@
   <li><strong><em>DocFetcher 自身で</em></strong>: DocFetcher が起動していて、変更されたフォルダの<em>folder watching</em> が有効な場合, DocFetcher は変更を検出して、すぐさまインデックスを更新します。</li>
   <li><strong><em>DocFetcher デーモン</em></strong>: DocFetcher が起動していないとき、変更は、バックグラウンドで動作する小さな常駐プログラムによって記録されています; 影響を受けたインデックスは、次回のDocFetcherの起動時に更新されます。 (注: 残念ながらデーモンは Mac OS&nbsp;X では現在使用できません。)</li>
 </ol><p>諸注意: もしportable version のDocFetcher を使用していて、デーモンを起動したいときは、デーモンの実行ファイルをオペレーションシステムのスタートアッププログラムの一覧に手動で追加する必要があります。また、DocFetcherもデーモンのいずれも共有フォルダの変化を検出することが出来ません。<!-- this line should end with two spaces --><br/>なので、インデックスを自動的に更新することができないような場合には、それを自分で行う必要があるでしょう： <code>検索範囲</code>エリアで1つ以上の更新を行うインデックスを選択し、<code>検索範囲</code>のコンテキストメニューから<code>インデックス更新</code>をクリックするか、<code>F5</code> キーを押すかのいずれかを行って下さい。</p>
-<hr/><p><a name="Advanced_Usage"></a> <!-- Do not translate this line, just copy it verbatim. --></p><h1>高度な使い方</h1><p><strong>問合せ構文</strong>: DocFetcherを使うと、単純な単語での検索よりもはるかに多くのことができます。たとえば、 <code>wiki*</code> のように始まりが共通な単語を検索するにはワイルドカードを使用することができます。特定のフレーズを検索するには (すなわち特定の順番の単語の並び)、引用符でフレーズを囲みます。: <code>&quot;the quick brown fox&quot;</code>. しかしそれは序の口に過ぎません。サポートされている全ての構文については次を参照してください。 <a href="DocFetcher_Manual_files/Query_Syntax.html">問合せ構文セクション</a>.</p><p><strong>携帯文書リポジトリ</strong>: DocFetcherのポータブル版は、あなたの文書と関連するインデックス、そしてDocFetcherをひとまとめにすることができます。そしてこれらを自由に移動することができます。 &mdash; あるオペレーションシステムから別のものにすら、すなわち、WindowsからLinuxまたはその逆へ。 ポータブル版を使用する際に覚えておくべき重要な点は、インデックスが<em>相対パス</em>を使用して作成されなければならないということです。 携帯文書リポジトリについて詳細な情報は <a href="DocFetcher_Manual_files/Portable_Repositories.html">こちら</a> をクリック。 ところで、あなたがDocFetcher の1.0.3 以前を使用していたとしたら、もうDocFetcherフォルダに文書を置く必要がないことに注意してください。</p><p><strong>インデックスの設定オプション</strong>: インデックス作成の設定ウィンドウ上のすべてのこれらのオプションの詳細な議論については、 <a href="DocFetcher_Manual_files/Indexing_Options.html">here</a>をクリック。 また設定ウインドウから直接マニュアルを開くにはウィンドウの下部にある <code>ヘルプ</code> ボタンをクリックしてください。おそらくとても興味深いの設定オプションがあります: </p>
+<hr/><p><a name="Advanced_Usage"></a> <!-- Do not translate this line, just copy it verbatim. --></p><h1>高度な使い方</h1><p><strong>問合せ構文</strong>: DocFetcherを使うと、単純な単語での検索よりもはるかに多くのことができます。たとえば、 <code>wiki*</code> のように始まりが共通な単語を検索するにはワイルドカードを使用することができます。特定のフレーズを検索するには (すなわち特定の順番の単語の並び)、引用符でフレーズを囲みます。: <code>&quot;the quick brown fox&quot;</code>. しかしそれは序の口に過ぎません。サポートされている全ての構文については次を参照してください。 <a href="DocFetcher_Manual_files/Query_Syntax.html">問合せ構文セクション</a>.</p>
+<!-- In need of translation:
+**Preferences**: On the top right of the user interface, you'll find an icon depicting two cogwheels. Click on it to open the Preferences dialog. Additional settings for more advanced usage can be accessed via the "Advanced Settings" link at the lower left of the Preferences dialog.
+--><p><strong>携帯文書リポジトリ</strong>: DocFetcherのポータブル版は、あなたの文書と関連するインデックス、そしてDocFetcherをひとまとめにすることができます。そしてこれらを自由に移動することができます。 &mdash; あるオペレーションシステムから別のものにすら、すなわち、WindowsからLinuxまたはその逆へ。 ポータブル版を使用する際に覚えておくべき重要な点は、インデックスが<em>相対パス</em>を使用して作成されなければならないということです。 携帯文書リポジトリについて詳細な情報は <a href="DocFetcher_Manual_files/Portable_Repositories.html">こちら</a> をクリック。 ところで、あなたがDocFetcher の1.0.3 以前を使用していたとしたら、もうDocFetcherフォルダに文書を置く必要がないことに注意してください。</p><p><strong>インデックスの設定オプション</strong>: インデックス作成の設定ウィンドウ上のすべてのこれらのオプションの詳細な議論については、 <a href="DocFetcher_Manual_files/Indexing_Options.html">here</a>をクリック。 また設定ウインドウから直接マニュアルを開くにはウィンドウの下部にある <code>ヘルプ</code> ボタンをクリックしてください。おそらくとても興味深いの設定オプションがあります: </p>
 <ul>
   <li><strong><em>カスタマイズ可能なファイルの拡張子</em></strong>: プレーンテキストファイルやZIPアーカイブのファイルの拡張子は、完全にカスタマイズできます。 これはソースコードファイルをインデックス化するとき特に有用です。</li>
   <li><strong><em>ファイルの除外</em></strong>: 正規表現を使用して特定のファイルを除外することができます。</li>
@@ -46,7 +49,7 @@
 </ul><h1>さらに詳しい情報</h1><p>更なる情報は私たちの <a href="http://docfetcher.sourceforge.net/wiki/doku.php">wiki</a> を見てください。質問や感想があれば自由に私たちの <a href="http://sourceforge.net/projects/docfetcher/forums/forum/702424">forum</a>に訪問してください。 バグレポートは私たちの <a href="http://sourceforge.net/tracker/?group_id=197779&atid=962834">bug tracker</a>に投稿してください。</p>
 		</div>
 		<div class="footer">
-			<span style="color: rgb(128, 128, 128);">DocFetcher Manual &ndash; Copyright (c) 2007-2016 DocFetcher Development Team</span>
+			<span style="color: rgb(128, 128, 128);">DocFetcher Manual &ndash; Copyright (c) 2007-2017 DocFetcher Development Team</span>
 		</div>
 	</body>
 </html>
