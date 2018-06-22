@@ -70,18 +70,6 @@ MaxLinesInProgressPanel = 1000
 # Mainly useful for debugging.
 DryRun = false
 
-# The type of analyzer used during indexing.
-# 0 = StandardAnalyzer
-# 1 = SourceCodeAnalyzer
-# Among other things, this option has an effect on how the raw document text is
-# split into words. The StandardAnalyzer is suitable in most cases, but the
-# SourceCodeAnalyzer may give better results for source code files (e.g. it
-# splits words containing dots, such as 'list.iterator').
-# Important: After changing this option, you must restart DocFetcher and then
-# rebuild all existing indexes, otherwise you might get inconsistent search
-# results.
-Analyzer = 0
-
 # Whether support for tar archives is disabled. If disabled, tar archives will
 # be treated as ordinary files. Set this to true if you experience tar-related
 # issues, e.g. your temporary directory filling up with tzp*.tmp files, or just
@@ -151,3 +139,18 @@ UnpackCacheCapacity = 20
 # Whether the text-only preview is enabled. Setting this to false is useful when
 # the GUI is slowed down by large files being displayed in the preview pane.
 TextPreviewEnabled = true
+
+
+#===============================================================================
+#	Python API - UNSAFE!
+#===============================================================================
+
+# Whether the DocFetcher instance allows scripting based on Py4J. For example
+# usage, see the file search.py. This setting is disabled by default for
+# security reasons: Enabling it will make DocFetcher run a TCP server on
+# localhost, which is subject to both local and (potential) remote code
+# execution exploits.
+PythonApiEnabled = false
+
+# The port on which the DocFetcher instance allows scripting.
+PythonApiPort = 28834
